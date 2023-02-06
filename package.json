@@ -1,6 +1,6 @@
 {
 	"name": "@benny-eleventy/benny-ui",
-	"version": "1.0.2",
+	"version": "1.0.4",
 	"description": "React UI component library for web apps",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
@@ -17,36 +17,18 @@
 	"homepage": "https://github.com/benny-eleventy/benny-ui.git",
 	"license": "ISC",
 	"devDependencies": {
-		"@babel/core": "^7.12.10",
-		"@babel/preset-react": "^7.12.10",
-		"@rollup/plugin-commonjs": "^21.0.1",
-		"@rollup/plugin-node-resolve": "^13.0.6",
-		"@rollup/plugin-typescript": "^8.3.3",
 		"@tsconfig/recommended": "^1.0.2",
 		"@types/react": "^18.0.27",
 		"@types/styled-components": "^5.1.26",
-		"babel-loader": "^8.2.2",
 		"react": "^18.2.0",
-		"rollup": "^2.60.0",
-		"rollup-plugin-babel": "^4.4.0",
-		"rollup-plugin-dts": "^4.0.1",
-		"rollup-plugin-peer-deps-external": "^2.2.4",
-		"rollup-plugin-postcss": "^4.0.0",
-		"rollup-plugin-terser": "^7.0.2",
-		"rollup-plugin-typescript2": "^0.29.0",
 		"styled-components": "^5.3.6",
-		"tslib": "^2.5.0",
-		"typescript": "^4.9.5",
-		"typescript-plugin-styled-components": "^2.0.0"
+		"typescript": "^4.9.5"
 	},
-	"main": "dist/cjs/index.js",
-	"module": "dist/esm/index.js",
+	"main": "src/index.ts",
 	"files": [
-		"dist"
+		"src/**/*"
 	],
-	"types": "dist/index.d.ts",
 	"publishConfig": {
 		"registry": "https://npm.pkg.github.com/benny-ui"
-	},
-	"type": "module"
+	}
 }
