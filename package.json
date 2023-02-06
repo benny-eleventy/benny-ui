@@ -1,10 +1,10 @@
 {
 	"name": "@benny-eleventy/benny-ui",
-	"version": "1.0.0",
+	"version": "1.0.2",
 	"description": "React UI component library for web apps",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
-		"build": "rollup -c"
+		"build": "rollup -c --bundleConfigAsCjs"
 	},
 	"author": "Benny 11",
 	"repository": {
@@ -35,6 +35,7 @@
 		"rollup-plugin-terser": "^7.0.2",
 		"rollup-plugin-typescript2": "^0.29.0",
 		"styled-components": "^5.3.6",
+		"tslib": "^2.5.0",
 		"typescript": "^4.9.5",
 		"typescript-plugin-styled-components": "^2.0.0"
 	},
@@ -45,6 +46,7 @@
 	],
 	"types": "dist/index.d.ts",
 	"publishConfig": {
-		"registry": "https://npm.pkg.github.com/benny-eleventy"
-	}
+		"registry": "https://npm.pkg.github.com/benny-ui"
+	},
+	"type": "module"
 }

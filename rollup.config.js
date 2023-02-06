@@ -2,18 +2,8 @@ import resolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
 import typescript from "@rollup/plugin-typescript";
 import dts from "rollup-plugin-dts";
-import createStyledComponentsTransformer from "typescript-plugin-styled-components";
 
-const styledComponentsTransformer = createStyledComponentsTransformer({
-	displayName: true,
-});
-
-// To handle css files
-
-import { terser } from "rollup-plugin-terser";
-import peerDepsExternal from "rollup-plugin-peer-deps-external";
-
-const packageJson = require("./package.json");
+import packageJson from "./package.json";
 
 export default [
 	{
@@ -31,26 +21,15 @@ export default [
 			},
 		],
 		plugins: [
-			peerDepsExternal(),
 			resolve(),
 			commonjs(),
-			typescript({
-				tsconfig: "./tsconfig.json",
-				transformers: [
-					() => {
-						before: [styledComponentsTransformer];
-					},
-				],
-			}),
-
-			terser(),
+			typescript({ tsconfig: "./tsconfig.json" }),
 		],
 	},
 	{
-		input: "dist/esm/src/index.d.ts",
+		input: "dist/esm/index.d.ts",
 		output: [{ file: "dist/index.d.ts", format: "esm" }],
 		plugins: [dts()],
-
-		external: [/\.css$/], // telling rollup anything that is .css aren't part of type exports
+		external: [/\.(css|less|scss)$/],
 	},
 ];
