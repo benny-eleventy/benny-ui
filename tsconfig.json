@@ -1,0 +1,12 @@
+{
+	"extends": "@tsconfig/recommended/tsconfig.json",
+	"compilerOptions": {
+		"jsx": "preserve",
+		"baseUrl": ".",
+		"paths": {
+			"@/*": ["./src/*"]
+			// "@/constants/*": ["./src/constants/*"]
+		}
+	},
+	"includes": ["src/**/*", "styled.d.ts"]
+}
