@@ -1,8 +1,7 @@
 import styled from "styled-components";
-import motion from "framer-motion";
+import { motion } from "framer-motion";
 import { ContainerProps } from "../../container/container.types";
 import { constants } from "../../../constants";
-//@ts-ignore
 
 export const AnimatedContainer = styled(motion.div)<ContainerProps>`
 	width: ${(props) => props.width};
