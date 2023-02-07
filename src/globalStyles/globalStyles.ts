@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
     body {
@@ -7,6 +7,13 @@ const GlobalStyle = createGlobalStyle`
         background: ${({ theme }) => theme.colors.background};
         box-sizing: border-box;
         font-family: ${({ theme }) => theme.constants.typography.font.primary};
+     }
+
+     *,*::after,*::before {
+        box-sizing: border-box;
+        -webkit-font-smoothing: antialiased;
+        -moz-box-sizing:border-box; 
+        -ms-box-sizing:border-box;
      }
 `;
 
