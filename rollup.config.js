@@ -20,7 +20,13 @@ export default [
 				transformers: [() => ({ before: [styledComponentsTransformer] })],
 			}),
 		],
-		external: ["react", "react-dom", "styled-components", "react/jsx-runtime"],
+		external: [
+			"react",
+			"react-dom",
+			"styled-components",
+			"react/jsx-runtime",
+			"framer-motion",
+		],
 	},
 	{
 		input: "dist/index.d.ts",

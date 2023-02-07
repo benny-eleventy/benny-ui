@@ -1,8 +1,10 @@
 import styled from "styled-components";
-import { ContainerProps } from "./container.types";
-import { constants } from "../../constants";
+import motion from "framer-motion";
+import { ContainerProps } from "../../container/container.types";
+import { constants } from "../../../constants";
+//@ts-ignore
 
-export const Container = styled.div<ContainerProps>`
+export const AnimatedContainer = styled(motion.div)<ContainerProps>`
 	width: ${(props) => props.width};
 	height: ${(props) => props.height};
 
@@ -144,83 +146,93 @@ export const Container = styled.div<ContainerProps>`
 	scrollbar-thumb-color: ${(props) => props.scrollBarThumbColor};
 `;
 
-export const FlexContainer = styled(Container)<ContainerProps>`
+export const AnimatedFlexContainer = styled(AnimatedContainer)<ContainerProps>`
 	display: flex;
 `;
 
-export const ColumnContainer = styled(FlexContainer)<ContainerProps>`
+export const AnimatedColumnContainer = styled(
+	AnimatedFlexContainer
+)<ContainerProps>`
 	flex-direction: column;
 `;
 
-export const RowContainer = styled(FlexContainer)<ContainerProps>`
+export const AnimatedRowContainer = styled(
+	AnimatedFlexContainer
+)<ContainerProps>`
 	flex-direction: row;
 `;
 
-export const GridContainer = styled(Container)<ContainerProps>`
+export const AnimatedGridContainer = styled(AnimatedContainer)<ContainerProps>`
 	display: grid;
 `;
 
-export const CenterAlignedColumnContainer = styled(
-	ColumnContainer
+export const AnimatedCenterAlignedColumnContainer = styled(
+	AnimatedColumnContainer
 )<ContainerProps>`
 	align-items: center;
 	justify-content: center;
 `;
 
-export const FlexStartCenterAlignedColumnContainer = styled(
-	ColumnContainer
+export const AnimatedFlexStartCenterAlignedColumnContainer = styled(
+	AnimatedColumnContainer
 )<ContainerProps>`
 	align-items: center;
 	justify-content: flex-start;
 `;
 
-export const FlexStartColumnContainer = styled(ColumnContainer)<ContainerProps>`
+export const AnimatedFlexStartColumnContainer = styled(
+	AnimatedColumnContainer
+)<ContainerProps>`
 	justify-content: flex-start;
 	align-items: flex-start;
 `;
 
-export const OverflowFlexStartCenterAlignedColumnContainer = styled(
-	FlexStartCenterAlignedColumnContainer
+export const AnimatedOverflowFlexStartCenterAlignedColumnContainer = styled(
+	AnimatedFlexStartCenterAlignedColumnContainer
 )<ContainerProps>`
 	overflow: scroll;
 `;
 
-export const CenterAlignedRowContainer = styled(RowContainer)<ContainerProps>`
+export const AnimatedCenterAlignedRowContainer = styled(
+	AnimatedRowContainer
+)<ContainerProps>`
 	align-items: center;
 	justify-content: center;
 `;
 
-export const FlexStartCenterAlignedRowContainer = styled(
-	RowContainer
+export const AnimatedFlexStartCenterAlignedRowContainer = styled(
+	AnimatedRowContainer
 )<ContainerProps>`
 	align-items: center;
 	justify-content: flex-start;
 `;
 
-export const FlexEndCenterAlignedRowContainer = styled(
-	RowContainer
+export const AnimatedFlexEndCenterAlignedRowContainer = styled(
+	AnimatedRowContainer
 )<ContainerProps>`
 	align-items: center;
 	justify-content: flex-end;
 `;
 
-export const WrappedFlexStartCenterAlignedColumnContainer = styled(
-	RowContainer
+export const AnimatedWrappedFlexStartCenterAlignedColumnContainer = styled(
+	AnimatedRowContainer
 )<ContainerProps>`
 	align-items: center;
 	justify-content: flex-start;
 	flex-wrap: wrap;
 `;
 
-export const OverflowFlexStartCenterAlignedRowContainer = styled(
-	RowContainer
+export const AnimatedOverflowFlexStartCenterAlignedRowContainer = styled(
+	AnimatedRowContainer
 )<ContainerProps>`
 	align-items: center;
 	justify-content: flex-start;
 	overflow: scroll;
 `;
 
-export const SpaceBetweenRowContainer = styled(RowContainer)<ContainerProps>`
+export const AnimatedSpaceBetweenRowContainer = styled(
+	AnimatedRowContainer
+)<ContainerProps>`
 	align-items: center;
 	justify-content: space-between;
 `;
