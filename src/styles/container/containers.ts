@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { radii, space } from "../../constants";
+import { radii, s_small } from "../../constants";
 import { ContainerProps } from "./container.types";
 
 export const Container = styled.div<ContainerProps>`
@@ -41,7 +41,7 @@ export const Container = styled.div<ContainerProps>`
 	justify-self: ${(props) => props.justifySelf};
 	align-self: ${(props) => props.alignSelf};
 	order: ${(props) => props.order};
-	gap: ${(props) => props.gap || `${space["s-small"]}`};
+	gap: ${(props) => props.gap || `${s_small}`};
 	overflow: ${(props) => props.overflow};
 	overflow-x: ${(props) => props.overflowX};
 	overflow-y: ${(props) => props.overflowY};
@@ -60,8 +60,8 @@ export const Container = styled.div<ContainerProps>`
 	grid-row-end: ${(props) => props.gridRowEnd};
 	grid-column-start: ${(props) => props.gridColumnStart};
 	grid-column-end: ${(props) => props.gridColumnEnd};
-	grid-row-gap: ${(props) => props.gridRowGap || `${space["s-small"]}`};
-	grid-column-gap: ${(props) => props.gridColumnGap || `${space["s-small"]}`};
+	grid-row-gap: ${(props) => props.gridRowGap || `${s_small}`};
+	grid-column-gap: ${(props) => props.gridColumnGap || `${s_small}`};
 	grid-gap: ${(props) => props.gridGap};
 
 	background: ${(props) => props.background};

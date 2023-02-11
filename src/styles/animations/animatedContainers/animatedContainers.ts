@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import { ContainerProps } from "../../container/container.types";
-import { radii, space } from "../../../constants";
+import { radii, s_small } from "../../../constants";
 
 export const AnimatedContainer = styled(motion.div)<ContainerProps>`
 	width: ${(props) => props.width};
@@ -42,7 +42,7 @@ export const AnimatedContainer = styled(motion.div)<ContainerProps>`
 	justify-self: ${(props) => props.justifySelf};
 	align-self: ${(props) => props.alignSelf};
 	order: ${(props) => props.order};
-	gap: ${(props) => props.gap || `${space["s-small"]}`};
+	gap: ${(props) => props.gap || `${s_small}`}
 	overflow: ${(props) => props.overflow};
 	overflow-x: ${(props) => props.overflowX};
 	overflow-y: ${(props) => props.overflowY};
@@ -61,9 +61,9 @@ export const AnimatedContainer = styled(motion.div)<ContainerProps>`
 	grid-row-end: ${(props) => props.gridRowEnd};
 	grid-column-start: ${(props) => props.gridColumnStart};
 	grid-column-end: ${(props) => props.gridColumnEnd};
-	grid-row-gap: ${(props) => props.gridRowGap || `${space["s-small"]}`};
-	grid-column-gap: ${(props) => props.gridColumnGap || `${space["s-small"]}`};
-	grid-gap: ${(props) => props.gridGap || `${space["s-small"]}`};
+	grid-row-gap: ${(props) => props.gridRowGap || `${s_small}`};
+	grid-column-gap: ${(props) => props.gridColumnGap || `${s_small}`};
+	grid-gap: ${(props) => props.gridGap || `${s_small}`};
 
 	background: ${(props) => props.background};
 	background-color: ${(props) => props.backgroundColor};

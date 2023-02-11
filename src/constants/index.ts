@@ -1,5 +1,5 @@
 import { radii } from "./radii";
-import { space } from "./spaces";
 
-export { radii, space };
+export { radii };
+export * from "./spaces";
 export * from "./typography";
