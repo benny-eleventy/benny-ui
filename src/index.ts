@@ -1,8 +1,9 @@
-import { TestComponent } from './components/TestComponent/TestComponent';
-import { Button } from './components/Button/Button';
+import { TestComponent } from "./components/TestComponent/TestComponent";
+import { Button } from "./components/Button/Button";
+import themes from "./themes";
 
-export { TestComponent, Button };
-export * from './constants';
-export * from './styles';
+export { TestComponent, Button, themes };
+export * from "./constants";
+export * from "./styles";
 
-export { BennyThemeProvider } from './provider/BennyThemeProvider';
+export { BennyThemeProvider } from "./provider/BennyThemeProvider";
