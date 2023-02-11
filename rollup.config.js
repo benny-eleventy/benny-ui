@@ -2,6 +2,7 @@ import typescript from "rollup-plugin-typescript2";
 import createStyledComponentsTransformer from "typescript-plugin-styled-components";
 import dts from "rollup-plugin-dts";
 import pkg from "./package.json";
+import terser from "@rollup/plugin-terser";
 
 const styledComponentsTransformer = createStyledComponentsTransformer({
 	displayName: true,
@@ -20,6 +21,7 @@ export default [
 				tsconfig: "tsconfig.json",
 				transformers: [() => ({ before: [styledComponentsTransformer] })],
 			}),
+			terser(),
 		],
 		external: [
 			"react",
