@@ -1,5 +1,3 @@
-import { constants } from "../constants";
-
 const colors = [
 	{
 		name: "dark-teal",
@@ -251,5 +249,4 @@ const colors = [
 
 export default {
 	colors,
-	constants,
 };

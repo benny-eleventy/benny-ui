@@ -1,18 +1,20 @@
+import {
+	fontSize,
+	fontWeight,
+	lineHeight,
+	primaryFont,
+} from "./../../constants/typography";
 import styled from "styled-components";
-import { constants } from "../../constants";
 import { TextProps } from "./text.types";
 
 export const Text = styled.h1<TextProps>`
 	color: ${(props) => props.color};
-	font-size: ${(props) => props.fontSize || constants.typography.size.regular};
-	font-weight: ${(props) =>
-		props.fontWeight || constants.typography.weight.regular};
-	font-family: ${(props) =>
-		props.fontFamily || constants.typography.font.primary};
+	font-size: ${(props) => props.fontSize || fontSize["fs-regular"]};
+	font-weight: ${(props) => props.fontWeight || fontWeight["fw-regular"]};
+	font-family: ${(props) => props.fontFamily || primaryFont};
 	font-style: ${(props) => props.fontStyle || "normal"};
 
-	line-height: ${(props) =>
-		props.lineHeight || constants.typography.lineHeight.regular};
+	line-height: ${(props) => props.lineHeight || lineHeight["lh-regular"]};
 	letter-spacing: ${(props) => props.letterSpacing || "normal"};
 
 	text-align: ${(props) => props.textAlign || "left"};
@@ -25,7 +27,6 @@ export const Text = styled.h1<TextProps>`
 	word-break: ${(props) => props.wordBreak || "normal"};
 
 	writing-mode: ${(props) => props.writingMode};
-	cursor: ${(props) => props.cursor || "default"};
 	opacity: ${(props) => props.opacity};
 	aspect-ratio: ${(props) => props.aspectRatio};
 

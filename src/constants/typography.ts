@@ -5,15 +5,7 @@ export const typography = {
 		secondary: "Roboto, sans-serif",
 	},
 	// font-size
-	size: {
-		xsmall: "clamp(0.79rem, calc(0.73rem + 0.30vw), 0.96rem)",
-		small: "clamp(0.89rem, calc(0.78rem + 0.54vw), 1.20rem)",
-		regular: "clamp(1.00rem, calc(0.83rem + 0.87vw), 1.50rem)",
-		large: "clamp(1.13rem, calc(0.86rem + 1.30vw), 1.88rem)",
-		xlarge: "clamp(1.27rem, calc(0.89rem + 1.88vw), 2.34rem)",
-		xxlarge: "clamp(1.42rem, calc(0.90rem + 2.62vw), 2.93rem)",
-		xxxlarge: "clamp(1.60rem, calc(0.89rem + 3.58vw), 3.66rem)",
-	},
+
 	// font-weight
 	weight: {
 		light: 300,
@@ -27,10 +19,36 @@ export const typography = {
 		weight700: 700,
 		weight800: 800,
 	},
-	// line-height
-	lineHeight: {
-		small: "125%",
-		regular: "150%",
-		large: "175%",
-	},
+};
+
+export const primaryFont = "roboto, sans-serif";
+export const secondaryFont = "roboto, sans-serif";
+
+export const fontSize = {
+	"fs-xxsmall": "clamp(0.79rem, calc(0.73rem + 0.30vw), 0.96rem)",
+	"fs-small": "clamp(0.89rem, calc(0.78rem + 0.54vw), 1.20rem)",
+	"fs-regular": "clamp(1.00rem, calc(0.83rem + 0.87vw), 1.50rem)",
+	"fs-large": "clamp(1.13rem, calc(0.86rem + 1.30vw), 1.88rem)",
+	"fs-xlarge": "clamp(1.27rem, calc(0.89rem + 1.88vw), 2.34rem)",
+	"fs-xxlarge": "clamp(1.42rem, calc(0.90rem + 2.62vw), 2.93rem)",
+	"fs-xxxlarge": "clamp(1.60rem, calc(0.89rem + 3.58vw), 3.66rem)",
+};
+
+export const fontWeight = {
+	"fw-light": 300,
+	"fw-regular": 400,
+	"fw-bold": 700,
+	"fw-200": 200,
+	"fw-300": 300,
+	"fw-400": 400,
+	"fw-500": 500,
+	"fw-600": 600,
+	"fw-700": 700,
+	"fw-800": 800,
+};
+
+export const lineHeight = {
+	"lh-small": "125%",
+	"lh-regular": "150%",
+	"lh-large": "175%",
 };
