@@ -182,7 +182,14 @@ export const FlexStartColumnContainer = styled(ColumnContainer)<ContainerProps>`
 export const OverflowFlexStartCenterAlignedColumnContainer = styled(
 	FlexStartCenterAlignedColumnContainer
 )<ContainerProps>`
-	overflow: scroll;
+	overflow-y: scroll;
+	scrollbar-width: thin;
+	> * {
+		flex-shrink: 0;
+	}
+	::-webkit-scrollbar {
+		display: none;
+	}
 `;
 
 export const CenterAlignedRowContainer = styled(RowContainer)<ContainerProps>`
@@ -217,7 +224,11 @@ export const OverflowFlexStartCenterAlignedRowContainer = styled(
 )<ContainerProps>`
 	align-items: center;
 	justify-content: flex-start;
-	overflow: scroll;
+	overflow-x: scroll;
+	scrollbar-width: thin;
+	::-webkit-scrollbar {
+		display: none;
+	}
 `;
 
 export const SpaceBetweenRowContainer = styled(RowContainer)<ContainerProps>`

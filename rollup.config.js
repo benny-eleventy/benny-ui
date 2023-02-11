@@ -5,6 +5,7 @@ import pkg from "./package.json";
 
 const styledComponentsTransformer = createStyledComponentsTransformer({
 	displayName: true,
+	ssr: true,
 });
 
 export default [
