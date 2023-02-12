@@ -10,3 +10,9 @@ export const radii = {
 	"br-xlarge": "1.25rem",
 	"br-circle": "50%",
 };
+
+export const radii_small = "0.25rem";
+export const radii_regular = "0.5rem";
+export const radii_large = "1rem";
+export const radii_xlarge = "1.25rem";
+export const radii_circle = "50%";

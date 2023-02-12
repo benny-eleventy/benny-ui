@@ -16,19 +16,19 @@ export default [
 			{ file: pkg.main, format: "cjs" },
 			{ file: pkg.module, format: "esm" },
 		],
-		plugins: [
-			typescript({
-				tsconfig: "tsconfig.json",
-				transformers: [() => ({ before: [styledComponentsTransformer] })],
-			}),
-			terser(),
-		],
 		external: [
 			"react",
 			"react-dom",
 			"styled-components",
 			"react/jsx-runtime",
 			"framer-motion",
+		],
+		plugins: [
+			typescript({
+				tsconfig: "tsconfig.json",
+				transformers: [() => ({ before: [styledComponentsTransformer] })],
+			}),
+			terser(),
 		],
 	},
 	{
