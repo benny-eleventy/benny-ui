@@ -1,7 +1,7 @@
 import {
-	fontSize,
-	fontWeight,
-	lineHeight,
+	fs_regular,
+	fw_regular,
+	lh_regular,
 	primaryFont,
 } from "./../../constants/typography";
 import styled from "styled-components";
@@ -9,12 +9,12 @@ import { TextProps } from "./text.types";
 
 export const Text = styled.h1<TextProps>`
 	color: ${(props) => props.color};
-	font-size: ${(props) => props.fontSize || fontSize["fs-regular"]};
-	font-weight: ${(props) => props.fontWeight || fontWeight["fw-regular"]};
+	font-size: ${(props) => props.fontSize || fs_regular};
+	font-weight: ${(props) => props.fontWeight || fw_regular};
 	font-family: ${(props) => props.fontFamily || primaryFont};
 	font-style: ${(props) => props.fontStyle || "normal"};
 
-	line-height: ${(props) => props.lineHeight || lineHeight["lh-regular"]};
+	line-height: ${(props) => props.lineHeight || lh_regular};
 	letter-spacing: ${(props) => props.letterSpacing || "normal"};
 
 	text-align: ${(props) => props.textAlign || "left"};
@@ -22,8 +22,8 @@ export const Text = styled.h1<TextProps>`
 	text-transform: ${(props) => props.textTransform || "none"};
 	text-indent: ${(props) => props.textIndent};
 	word-spacing: ${(props) => props.wordSpacing || "normal"};
-	vertical-align: ${(props) => props.verticalAlign || "baseline"};
-	white-space: ${(props) => props.whiteSpace || "normal"};
+	vertical-align: ${(props) => props.verticalAlign || "middle"};
+	white-space: ${(props) => props.whiteSpace || "nowrap"};
 	word-break: ${(props) => props.wordBreak || "normal"};
 
 	writing-mode: ${(props) => props.writingMode};

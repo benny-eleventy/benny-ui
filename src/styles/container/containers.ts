@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { radii, s_small } from "../../constants";
+import { br_small, s_small } from "../../constants";
 import { ContainerProps } from "./container.types";
 
 export const Container = styled.div<ContainerProps>`
@@ -46,24 +46,6 @@ export const Container = styled.div<ContainerProps>`
 	overflow-x: ${(props) => props.overflowX};
 	overflow-y: ${(props) => props.overflowY};
 
-	grid-template-columns: ${(props) => props.gridTemplateColumns};
-	grid-template-rows: ${(props) => props.gridTemplateRows};
-	grid-template-areas: ${(props) => props.gridTemplateAreas};
-	grid-auto-columns: ${(props) => props.gridAutoColumns};
-	grid-auto-rows: ${(props) => props.gridAutoRows};
-	grid-auto-flow: ${(props) => props.gridAutoFlow};
-	grid: ${(props) => props.grid};
-	grid-row: ${(props) => props.gridRow};
-	grid-column: ${(props) => props.gridColumn};
-	grid-area: ${(props) => props.gridArea};
-	grid-row-start: ${(props) => props.gridRowStart};
-	grid-row-end: ${(props) => props.gridRowEnd};
-	grid-column-start: ${(props) => props.gridColumnStart};
-	grid-column-end: ${(props) => props.gridColumnEnd};
-	grid-row-gap: ${(props) => props.gridRowGap || `${s_small}`};
-	grid-column-gap: ${(props) => props.gridColumnGap || `${s_small}`};
-	grid-gap: ${(props) => props.gridGap};
-
 	background: ${(props) => props.background};
 	background-color: ${(props) => props.backgroundColor};
 	background-image: ${(props) => props.backgroundImage};
@@ -72,7 +54,7 @@ export const Container = styled.div<ContainerProps>`
 	background-repeat: ${(props) => props.backgroundRepeat};
 
 	border: ${(props) => props.border};
-	border-radius: ${(props) => props.borderRadius || `${radii["br-small"]}`};
+	border-radius: ${(props) => props.borderRadius || `${br_small}`};
 	border-image: ${(props) => props.borderImage};
 	border-image-source: ${(props) => props.borderImageSource};
 	border-image-slice: ${(props) => props.borderImageSlice};
@@ -157,6 +139,23 @@ export const RowContainer = styled(FlexContainer)<ContainerProps>`
 
 export const GridContainer = styled(Container)<ContainerProps>`
 	display: grid;
+	grid-template-columns: ${(props) => props.gridTemplateColumns};
+	grid-template-rows: ${(props) => props.gridTemplateRows};
+	grid-template-areas: ${(props) => props.gridTemplateAreas};
+	grid-auto-columns: ${(props) => props.gridAutoColumns};
+	grid-auto-rows: ${(props) => props.gridAutoRows};
+	grid-auto-flow: ${(props) => props.gridAutoFlow};
+	grid: ${(props) => props.grid};
+	grid-row: ${(props) => props.gridRow};
+	grid-column: ${(props) => props.gridColumn};
+	grid-area: ${(props) => props.gridArea};
+	grid-row-start: ${(props) => props.gridRowStart};
+	grid-row-end: ${(props) => props.gridRowEnd};
+	grid-column-start: ${(props) => props.gridColumnStart};
+	grid-column-end: ${(props) => props.gridColumnEnd};
+	grid-row-gap: ${(props) => props.gridRowGap};
+	grid-column-gap: ${(props) => props.gridColumnGap};
+	grid-gap: ${(props) => props.gridGap};
 `;
 
 export const CenterAlignedColumnContainer = styled(
