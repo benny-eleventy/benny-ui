@@ -160,9 +160,10 @@ export const AnimatedGridContainer = styled(AnimatedContainer)<ContainerProps>`
 	grid-row-end: ${(props) => props.gridRowEnd};
 	grid-column-start: ${(props) => props.gridColumnStart};
 	grid-column-end: ${(props) => props.gridColumnEnd};
-	grid-row-gap: ${(props) => props.gridRowGap || `${s_small}`};
-	grid-column-gap: ${(props) => props.gridColumnGap || `${s_small}`};
-	grid-gap: ${(props) => props.gridGap || `${s_small}`};
+	grid-row-gap: ${(props) => props.gridRowGap};
+	grid-column-gap: ${(props) => props.gridColumnGap};
+	grid-gap: ${(props) => props.gridGap || "0px 0px"};
+	gap: ${(props) => props.gap || "0px"};
 `;
 
 export const AnimatedCenterAlignedColumnContainer = styled(

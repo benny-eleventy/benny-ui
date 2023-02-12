@@ -155,7 +155,8 @@ export const GridContainer = styled(Container)<ContainerProps>`
 	grid-column-end: ${(props) => props.gridColumnEnd};
 	grid-row-gap: ${(props) => props.gridRowGap};
 	grid-column-gap: ${(props) => props.gridColumnGap};
-	grid-gap: ${(props) => props.gridGap};
+	grid-gap: ${(props) => props.gridGap || "0px 0px"};
+	gap: ${(props) => props.gap || "0px"};
 `;
 
 export const CenterAlignedColumnContainer = styled(

@@ -23,7 +23,7 @@ export const Text = styled.h1<TextProps>`
 	text-indent: ${(props) => props.textIndent};
 	word-spacing: ${(props) => props.wordSpacing || "normal"};
 	vertical-align: ${(props) => props.verticalAlign || "middle"};
-	white-space: ${(props) => props.whiteSpace || "nowrap"};
+	white-space: ${(props) => props.whiteSpace || "normal"};
 	word-break: ${(props) => props.wordBreak || "normal"};
 
 	writing-mode: ${(props) => props.writingMode};
