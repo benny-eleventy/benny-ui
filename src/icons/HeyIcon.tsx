@@ -25,13 +25,13 @@ const SvgComponent = (
 	>
 		<g
 			style={{
-				fill: "white",
+				fill: "currentColor",
 			}}
 		>
 			<path
 				style={{
 					fill: "none",
-					stroke: "white",
+					stroke: "currentColor",
 					strokeWidth: 2.7009,
 					strokeLinecap: "round",
 					strokeLinejoin: "round",

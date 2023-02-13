@@ -38,7 +38,7 @@ const SvgComponent = (
 			<path
 				style={{
 					fill: "none",
-					stroke: "#30c85c",
+					stroke: "currentColor",
 					strokeWidth: 5.94213138,
 					strokeLinecap: "round",
 					strokeLinejoin: "round",

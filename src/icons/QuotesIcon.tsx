@@ -13,7 +13,7 @@ const SvgComponent = (
 	>
 		<g
 			style={{
-				fill: "white",
+				fill: "currentColor",
 			}}
 		>
 			<g
@@ -23,7 +23,7 @@ const SvgComponent = (
 					fontWeight: 700,
 					fontSize: "47.5371px",
 					fill: "none",
-					stroke: "white",
+					stroke: "currentColor",
 					strokeWidth: 2.97107,
 					strokeLinecap: "round",
 					strokeLinejoin: "round",
@@ -36,7 +36,7 @@ const SvgComponent = (
 						fontWeight: 400,
 						fontFamily: "'Microsoft Sans Serif'",
 						fill: "none",
-						stroke: "white",
+						stroke: "currentColor",
 						strokeWidth: 2.97107,
 						strokeDasharray: "none",
 						strokeOpacity: 1,
