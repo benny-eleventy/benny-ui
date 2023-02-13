@@ -1,5 +1,5 @@
 import * as I from "./index";
-import React from "react";
+import React, { MouseEventHandler } from "react";
 import { AnimatedCenterAlignedColumnContainer } from "../styles/animations";
 
 export const Icon = (props: { children: any }) => {
@@ -7,7 +7,11 @@ export const Icon = (props: { children: any }) => {
 };
 
 function createIconComponent(iconName: string) {
-	return function Icon(props: any) {
+	return function Icon(props: {
+		onClick?: MouseEventHandler<HTMLDivElement> | undefined;
+		isCursorPointer?: any;
+		size?: string;
+	}) {
 		// const copyTextToClipboard = (text: string) => {
 		// 	window.navigator.clipboard.writeText(text);
 		// 	setDisplayTextCopied(true);
@@ -19,15 +23,13 @@ function createIconComponent(iconName: string) {
 		const IconCmpnt = I[iconName];
 		return (
 			<AnimatedCenterAlignedColumnContainer
-				width="32px"
-				height="32px"
+				width={props.size || "48px"}
 				aspectRatio={"1"}
 				// onClick={
 				// 	iconName === "CopyIcon"
 				// 		? () => copyTextToClipboard(props.textToBeCopied)
 				// 		: props.onClick
 				// }
-				onClick={props.onClick}
 				position="relative"
 				cursor={props.onClick || props.isCursorPointer ? "pointer" : "default"}
 				whileHover={{
