@@ -5,5 +5,4 @@ import themes from "./themes";
 export { TestComponent, Button, themes };
 export * from "./constants";
 export * from "./styles";
-
-export { BennyThemeProvider } from "./provider/BennyThemeProvider";
+export * from "./icons/Icons";
