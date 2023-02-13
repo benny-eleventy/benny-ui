@@ -62,19 +62,19 @@ function createIconComponent(iconName: string) {
 	};
 }
 
-Icon.AuthorsIcon = createIconComponent("AuthorsIcon");
-Icon.CancelIcon = createIconComponent("CancelIcon");
-Icon.CheckboxIcon = createIconComponent("CheckboxIcon");
-Icon.ChevronIcon = createIconComponent("ChevronIcon");
-Icon.CloseIcon = createIconComponent("CloseIcon");
-Icon.HeyIcon = createIconComponent("HeyIcon");
-Icon.HomeIcon = createIconComponent("HomeIcon");
-Icon.LogoIcon = createIconComponent("LogoIcon");
-Icon.MenuIcon = createIconComponent("MenuIcon");
-Icon.QuotesIcon = createIconComponent("QuotesIcon");
-Icon.SearchIcon = createIconComponent("SearchIcon");
-Icon.TagsIcon = createIconComponent("TagsIcon");
-Icon.ThemeIcon = createIconComponent("ThemeIcon");
-Icon.ColorSplashIcon = createIconComponent("ColorSplashIcon");
-Icon.ShareIcon = createIconComponent("ShareIcon");
-Icon.CopyIcon = createIconComponent("CopyIcon");
+Icon.Author = createIconComponent("AuthorsIcon");
+Icon.Cancel = createIconComponent("CancelIcon");
+Icon.Checkbox = createIconComponent("CheckboxIcon");
+Icon.Chevron = createIconComponent("ChevronIcon");
+Icon.Close = createIconComponent("CloseIcon");
+Icon.Hey = createIconComponent("HeyIcon");
+Icon.Home = createIconComponent("HomeIcon");
+Icon.Logo = createIconComponent("LogoIcon");
+Icon.Menu = createIconComponent("MenuIcon");
+Icon.Quotes = createIconComponent("QuotesIcon");
+Icon.Search = createIconComponent("SearchIcon");
+Icon.Tags = createIconComponent("TagsIcon");
+Icon.Theme = createIconComponent("ThemeIcon");
+Icon.ColorSplash = createIconComponent("ColorSplashIcon");
+Icon.Share = createIconComponent("ShareIcon");
+Icon.Copy = createIconComponent("CopyIcon");
