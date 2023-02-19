@@ -1,4 +1,3 @@
-//@ts-nocheck
 import React from "react";
 import { motion, SVGMotionProps } from "framer-motion";
 
@@ -16,11 +15,11 @@ const SvgComponent = (
 		{...props}
 		animate={{ rotate: 20 }}
 		transition={{
-			yoyo: Infinity,
-			from: 0,
+			type: "tween",
+			repeatType: "loop",
+			repeat: Infinity,
 			duration: 1,
 			ease: "easeInOut",
-			type: "tween",
 		}}
 	>
 		<g

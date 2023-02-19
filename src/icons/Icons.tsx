@@ -1,6 +1,6 @@
 import * as I from "./index";
 import React, { MouseEventHandler } from "react";
-import { AnimatedCenterAlignedColumnContainer } from "../styles/animations";
+import { A } from "../styles/animations";
 
 export const Icon = (props: { children: any }) => {
 	return <>{props.children}</>;
@@ -22,7 +22,7 @@ function createIconComponent(iconName: string) {
 		// @ts-ignore
 		const IconCmpnt = I[iconName];
 		return (
-			<AnimatedCenterAlignedColumnContainer
+			<A.CenterAlignedColumnContainer
 				width={props.size || "48px"}
 				aspectRatio={"1"}
 				// onClick={
@@ -57,7 +57,7 @@ function createIconComponent(iconName: string) {
 					</MediumHueColorText>
 				)}
 				<ActiveIndicator isActive={props.isActive} /> */}
-			</AnimatedCenterAlignedColumnContainer>
+			</A.CenterAlignedColumnContainer>
 		);
 	};
 }
