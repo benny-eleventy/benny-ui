@@ -13,7 +13,7 @@ interface InputBoxProps extends ContainerProps {
 	value: string | " ";
 	onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 	onBlur?: () => void;
-	onClear?: () => void;
+	onClear?: (e: React.ChangeEvent<HTMLDivElement>) => void;
 	onEnter?: () => void;
 	placeholder?: string;
 	borderWidth?: string;
@@ -23,8 +23,11 @@ interface InputBoxProps extends ContainerProps {
 	focusOnMount?: boolean;
 	focusInputBox?: boolean;
 	rightIcon?: React.ReactNode;
+	leftIcon?: React.ReactNode;
 	hideClearIcon?: boolean;
 	autoComplete?: string;
+	displayClearText?: boolean;
+	placeholderColor?: string;
 }
 
 const InputBox = ({
@@ -42,8 +45,11 @@ const InputBox = ({
 	focusOnMount = false,
 	focusInputBox = false,
 	rightIcon,
+	leftIcon,
 	hideClearIcon,
 	autoComplete,
+	displayClearText = true,
+	placeholderColor = "rgba(255, 255, 255, 0.5)",
 	...rest
 }: InputBoxProps) => {
 	const inputBoxRef = React.useRef<HTMLInputElement>(null);
@@ -67,9 +73,18 @@ const InputBox = ({
 		setIsFocused(true);
 	}, []);
 
-	const handleClear = useCallback(() => {
-		onClear && onClear();
-	}, []);
+	const handleClear = useCallback(
+		(event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+			if (inputBoxRef.current) {
+				inputBoxRef.current.value = "";
+				inputBoxRef.current.focus();
+				setIsFocused(true);
+				//@ts-ignore
+				onClear && onClear(event);
+			}
+		},
+		[onClear]
+	);
 
 	const handleChange = useCallback(
 		(event: React.ChangeEvent<HTMLInputElement>) => {
@@ -129,10 +144,11 @@ const InputBox = ({
 			border={getBorderStyle(isFocused ? "active" : "inactive")}
 			hoverBorder={getBorderStyle(isFocused ? "active" : "hover")}
 			paddingInline={s_xxsmall}
+			paddingBlock={"0.5rem"}
 			color="white"
 			gap="0.2rem"
 		>
-			{rightIcon && rightIcon}
+			{leftIcon && leftIcon}
 			<InputText
 				ref={inputBoxRef}
 				id={id}
@@ -141,13 +157,18 @@ const InputBox = ({
 				onKeyDown={handleKeyDown}
 				value={value}
 				width="100%"
-				height="calc(6vh - 12px)"
+				height="100%"
 				placeholder={placeholder}
+				placeholderColor={placeholderColor}
 				color="inherit"
 				autoComplete={autoComplete ? autoComplete : "off"}
 				enterKeyHint={autoComplete ? "search" : "go"}
 			/>
-			{!hideClearIcon && <Icon.Close size="2em" onClick={handleClear} />}
+			{displayClearText && value && value.length > 0 ? (
+				<Icon.Close size="2em" onClick={handleClear} />
+			) : (
+				rightIcon && rightIcon
+			)}
 		</InputTextContainer>
 	);
 };
