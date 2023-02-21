@@ -1,6 +1,6 @@
 {
 	"name": "@benny-eleventy/benny-ui",
-	"version": "1.5.4",
+	"version": "1.5.5",
 	"description": "React UI component library for web apps",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
@@ -42,5 +42,27 @@
 	"types": "dist/index.d.ts",
 	"publishConfig": {
 		"registry": "https://npm.pkg.github.com/benny-ui"
+	},
+	"exports": {
+		".": {
+			"import": "./dist/index.esm.js",
+			"require": "./dist/index.cjs.js",
+			"types": "./dist/index.d.ts"
+		},
+		"./constants": {
+			"import": "./dist/constants/index.esm.js",
+			"require": "./dist/constants/index.cjs.js",
+			"types": "./dist/constants/index.d.ts"
+		},
+		"./components": {
+			"import": "./dist/components/index.esm.js",
+			"require": "./dist/components/index.cjs.js",
+			"types": "./dist/components/index.d.ts"
+		},
+		"./icons": {
+			"import": "./dist/icons/index.esm.js",
+			"require": "./dist/icons/index.cjs.js",
+			"types": "./dist/icons/index.d.ts"
+		}
 	}
 }
