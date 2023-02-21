@@ -12,6 +12,14 @@ const styledComponentsTransformer = createStyledComponentsTransformer({
 	ssr: true,
 });
 
+const externalDependencies = [
+	"react",
+	"react-dom",
+	"styled-components",
+	"react/jsx-runtime",
+	"framer-motion",
+];
+
 export default [
 	{
 		input: "src/index.ts",
@@ -46,10 +54,12 @@ export default [
 	{
 		input: "src/constants/index.ts",
 		output: [{ dir: "dist/constants", format: "esm" }],
+		external: externalDependencies,
 	},
 	{
 		input: "src/components/index.ts",
 		output: [{ dir: "dist/components", format: "esm" }],
+		external: externalDependencies,
 		plugins: [
 			resolve(),
 			commonjs(),
@@ -64,6 +74,7 @@ export default [
 	{
 		input: "src/icons/index.ts",
 		output: [{ dir: "dist/icons", format: "esm" }],
+		external: externalDependencies,
 		plugins: [
 			resolve(),
 			commonjs(),
