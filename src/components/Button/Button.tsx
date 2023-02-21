@@ -75,7 +75,7 @@ const generateAnimationTypeVariants = ({
 	};
 };
 
-const ButtonComponent = React.memo((props: ButtonProps) => {
+const Button = React.memo((props: ButtonProps) => {
 	console.log("rendering button");
 	const getAnimationVariants = () => {
 		if (props.animationType || props.clickAnimation || props.hoverAnimation) {
@@ -219,4 +219,4 @@ const ButtonComponent = React.memo((props: ButtonProps) => {
 	);
 });
 
-export default ButtonComponent;
+export default Button;

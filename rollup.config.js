@@ -3,6 +3,9 @@ import createStyledComponentsTransformer from "typescript-plugin-styled-componen
 import dts from "rollup-plugin-dts";
 import pkg from "./package.json";
 import terser from "@rollup/plugin-terser";
+import resolve from "@rollup/plugin-node-resolve";
+import commonjs from "@rollup/plugin-commonjs";
+import alias from "@rollup/plugin-alias";
 
 const styledComponentsTransformer = createStyledComponentsTransformer({
 	displayName: true,
@@ -12,12 +15,10 @@ const styledComponentsTransformer = createStyledComponentsTransformer({
 export default [
 	{
 		input: "src/index.ts",
+
 		output: [
 			{ file: pkg.main, format: "cjs" },
 			{ file: pkg.module, format: "esm" },
-			{ dir: "dist/constants", format: "esm" },
-			{ dir: "dist/components", format: "esm" },
-			{ dir: "dist/icons", format: "esm" },
 		],
 		external: [
 			"react",
@@ -27,9 +28,12 @@ export default [
 			"framer-motion",
 		],
 		plugins: [
+			resolve(),
+			commonjs(),
 			typescript({
 				tsconfig: "tsconfig.json",
 				transformers: [() => ({ before: [styledComponentsTransformer] })],
+				useTsconfigDeclarationDir: true,
 			}),
 			terser(),
 		],
@@ -38,5 +42,37 @@ export default [
 		input: "dist/index.d.ts",
 		output: [{ file: "dist/index.d.ts", format: "esm" }],
 		plugins: [dts()],
+	},
+	{
+		input: "src/constants/index.ts",
+		output: [{ dir: "dist/constants", format: "esm" }],
+	},
+	{
+		input: "src/components/index.ts",
+		output: [{ dir: "dist/components", format: "esm" }],
+		plugins: [
+			resolve(),
+			commonjs(),
+			typescript({
+				tsconfig: "tsconfig.json",
+				transformers: [() => ({ before: [styledComponentsTransformer] })],
+				useTsconfigDeclarationDir: true,
+			}),
+			terser(),
+		],
+	},
+	{
+		input: "src/icons/index.ts",
+		output: [{ dir: "dist/icons", format: "esm" }],
+		plugins: [
+			resolve(),
+			commonjs(),
+			typescript({
+				tsconfig: "tsconfig.json",
+				transformers: [() => ({ before: [styledComponentsTransformer] })],
+				useTsconfigDeclarationDir: true,
+			}),
+			terser(),
+		],
 	},
 ];
