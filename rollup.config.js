@@ -86,4 +86,19 @@ export default [
 			terser(),
 		],
 	},
+	{
+		input: "src/components/Button/index.ts",
+		output: [{ dir: "dist/components/button", format: "esm" }],
+		external: externalDependencies,
+		plugins: [
+			resolve(),
+			commonjs(),
+			typescript({
+				tsconfig: "tsconfig.json",
+				transformers: [() => ({ before: [styledComponentsTransformer] })],
+				useTsconfigDeclarationDir: true,
+			}),
+			terser(),
+		],
+	},
 ];
