@@ -15,6 +15,9 @@ export default [
 		output: [
 			{ file: pkg.main, format: "cjs" },
 			{ file: pkg.module, format: "esm" },
+			{ dir: "dist/constants", format: "esm" },
+			{ dir: "dist/components", format: "esm" },
+			{ dir: "dist/icons", format: "esm" },
 		],
 		external: [
 			"react",
